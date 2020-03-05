@@ -37,7 +37,7 @@ Webアプリケーションを開発するための環境を構築します。
 
 Homebrewとは、ソフトウェアの導入を単純化するMac OSのパッケージ管理システムです。
 
-まずは、Homebrewのインストールを行います。
+まずは、Homebrewのインストールを行います。既に入っている方は不要です。既に入っているかどうかの確認は、この後の`Homebrewがインストールされているか確認`を参考にして確認できます。
 
 ターミナルを開いて、以下を入力し、エンターキーを押して実行します。
 
@@ -71,7 +71,7 @@ $ brew install nodenv
 上記のコマンドを実行したらnodenvがインストールされているか確認します。以下のコマンドを実行してバージョンの情報が表示されていればインストールされています。
 
 ```shell script
-$ nodenv --v
+$ nodenv -v
 nodenv 1.3.1
 ```
 
@@ -84,7 +84,7 @@ nodeenvの設定とPATHを通す設定をシェルの設定に記述します。
 まず、ターミナルが使用しているシェルを確認します。
 
 ```shell script
-echo $SHELL
+$ echo $SHELL
 ```
 
 `/usr/local/bin/bash` のように表示されたら`bash`, `/usr/local/bin/zsh`のように表示されたら`zsh`を使用しています。
@@ -93,15 +93,15 @@ echo $SHELL
 
 bashの場合
 ```shell script
-echo 'export PATH="$HOME/.nodenv/bin:$PATH"' >> ~/.bash_profile
-echo 'eval "$(nodenv init -)"' >> ~/.bash_profile
-source ~/.bash_profile
+$ echo 'export PATH="$HOME/.nodenv/bin:$PATH"' >> ~/.bash_profile
+$ echo 'eval "$(nodenv init -)"' >> ~/.bash_profile
+$ source ~/.bash_profile
 ```
 zshの場合
 ```shell script
-echo 'export PATH="$HOME/.nodenv/bin:$PATH"' >> ~/.zshrc
-echo 'eval "$(nodenv init -)"' >> ~/.zshrc
-source ~/.zshrc
+$ echo 'export PATH="$HOME/.nodenv/bin:$PATH"' >> ~/.zshrc
+$ echo 'eval "$(nodenv init -)"' >> ~/.zshrc
+$ source ~/.zshrc
 ```
 
 ## Node.jsをインストールする
@@ -111,7 +111,7 @@ source ~/.zshrc
 以下のコマンドを実行してください。
 
 ```shell script
-nodenv install --list
+$ nodenv install --list
 ```
 
 すると下記のようにnodeのインストール可能なバージョンの一覧が表示されます。
@@ -134,10 +134,10 @@ nodenv install --list
 ここでは12.14.0が安定バージョンの中で最新であるため、12.14.0をインストールします。
 
 ```shell script
-nodenv global 12.14.0
+$ nodenv global 12.14.0
 ```
 
 以下コマンドを実行してnodeのバージョンを確認し、v12.14.0と出ればOKです。
 ```shell script
-node -v
+$ node -v
 ```
